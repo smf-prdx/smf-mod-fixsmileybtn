@@ -1,0 +1,19 @@
+/*
+ * FixSmileyBtn.css is a hack to fix the close button of the smiley popup in SMF 2.1
+ * when there are many smileys so the button is hard to reach.
+ */
+
+div.sceditor-smileyPopup #sceditor-popup span.button {
+    position: relative !important;
+    bottom: 0 !important;
+    margin: 0 !important;
+    z-index: 10 !important; /* Button must be over the smileys */
+    pointer-events: auto !important;
+}
+
+div.sceditor-smileyPopup #sceditor-popup div#sceditor-popup-smiley {
+    padding: 10px 0 50px 0 !important;
+    flex-grow: 1 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+}
