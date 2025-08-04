@@ -1,19 +1,33 @@
-/*
- * FixSmileyBtn.css is a hack to fix the close button of the smiley popup in SMF 2.1
- * when there are many smileys so the button is hard to reach.
- */
-
-div.sceditor-smileyPopup #sceditor-popup span.button {
-    position: relative !important;
-    bottom: 0 !important;
-    margin: 0 !important;
-    z-index: 10 !important; /* Button must be over the smileys */
-    pointer-events: auto !important;
+/* BIGGER AND BETTER SMILEY POP-UP DISPLAY */
+/* This allows to make it bigger than the modify message section */
+#postmodify .sceditor-container {
+  position: unset;
 }
 
+/* This places it covering most of the screen area, positions it in the middle and avoids overflows to easily close it */
+#postmodify div.sceditor-smileyPopup {
+  position: fixed;
+  min-height: 80vh;
+  min-width: 70vw;
+  z-index: 106;
+  top: 10vh;
+  padding: 1rem 0 1rem 1rem;
+  border-radius: 6px;
+}
+
+/* This just ensures that the button is always displayed */
 div.sceditor-smileyPopup #sceditor-popup div#sceditor-popup-smiley {
-    padding: 10px 0 50px 0 !important;
-    flex-grow: 1 !important;
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
+  overflow-x: hidden;
+}
+
+/* This adds some top-margin to the button, so it doesn't cut flush with the smileys */
+div.sceditor-smileyPopup #sceditor-popup span.button {
+  margin-top: .75rem;
+}
+
+/* Change position quick edit buttons */
+#quick_edit_body_container .quickModifyMargin {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: .5rem;
 }
